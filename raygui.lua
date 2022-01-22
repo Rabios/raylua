@@ -1,4 +1,21 @@
 local ffi = require("ffi")
+local arch = ffi.arch
+local sys = ffi.os
+
+local lib = "" 
+
+-- Get OS and architecture to set library file to use
+if sys == "Windows" then
+  if arch == "x64" then
+    lib = "libraygui64.dll"
+  else
+    lib = "libraygui32.dll"
+  end
+elseif sys == "OSX" then
+  lib = "./libraygui.dylib"
+else
+  lib = "./libraygui.so"
+end
 
 ffi.cdef([[
 /*******************************************************************************************
@@ -423,4 +440,4 @@ void GuiClearIconPixel(int iconId, int x, int y);     // Clear icon pixel value
 bool GuiCheckIconPixel(int iconId, int x, int y);     // Check icon pixel value
 ]])
 
-return ffi.load("raygui")
+return ffi.load(lib)
