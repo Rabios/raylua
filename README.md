@@ -1,5 +1,5 @@
 <div align="center">
-	<img src="https://github.com/Rabios/raylua/blob/master/raylua.png">
+	<img src="https://github.com/Rabios/raylua/blob/master/raylua.png?raw=true">
 	<p>Cross-Platform, Modern, Handwritten, Updated LuaJIT bindings for raylib library.</p>
 </div>
 
@@ -66,7 +66,7 @@ I finally did autocompletion for raylib Lua/LuaJIT bindings to use in ZeroBrane 
 
 ### Using this on cherry
 
-raylua also available as package for [cherry](https://github.com/Rabios/cherry), And it's easy to install and setup!
+raylua is also available as package for [cherry](https://github.com/Rabios/cherry), And it's easy to install and setup!
 
 ```
 cherry new D:\cherry-raylua-game
@@ -74,6 +74,21 @@ cherry add Rabios/raylua D:\cherry-raylua-game
 ```
 
 Then edit main file of package in directory `D:\cherry-raylua-game` and require `raylib` with writing game code!
+
+### Running and installing this on LPM
+
+raylua is also available as a package for [LPM](https://lpm.yaumama.repl.co). To setup, install, and run it just use this command:
+
+```
+lpm install raylua
+```
+
+and to run:
+```
+lpm jitrun main.lua
+```
+
+Replace main.lua with your main file.
 
 ### Running this on PUC-RIO Lua (Not LuaJIT)
 
